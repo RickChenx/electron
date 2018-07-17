@@ -68,7 +68,7 @@ steps:
   displayName: Publish Test Results
   inputs:
     testResultsFiles: '**/test-*.xml'
-  condition: and(always(), eq(variables['MOCHA_FILE'], 'test-results.xml'))
+  condition: and(always(), eq(variables['MOCHA_FILE'], 'junit/test-results.xml'))
 
 - task: kasunkodagoda.slack-notification.slack-notification-task.SlackNotification@3
   displayName: Post Slack Notification on Failure
